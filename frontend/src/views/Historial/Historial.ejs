@@ -1,0 +1,60 @@
+<%- include('../partials/head') %>
+    <%- include('../partials/nav') %>
+        <% if(historial.length> 0){ %>
+            <div class="container table-responsive tbm animate__animated animate__bounce">
+                <table class="table table-light table-bordered table-hover">
+                    <thead>
+                        <tr class="table-dark">
+                            <th>N#</th>
+                            <th>Usuario</th>
+                            <th>Libro</th>
+                            <th>Revista</th>
+                            <th>Peridico</th>
+                            <th>AudioLibro</th>
+                            <th>Fecha</th>
+                            <!-- <th>Acciones</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i=0; i < historial.length; i++){ %>
+                            <tr>
+                                <td>
+                                    <%= i+1 %>
+                                </td>
+                                <td>
+                                    <%= historial[i].idUsuario %>
+                                </td>
+                                <td>
+                                    <%= historial[i].idLibro %>
+                                </td>
+                                <td>
+                                    <%= historial[i].idRevista %>
+                                </td>
+                                <td>
+                                    <%= historial[i].idPeriodico %>
+                                </td>
+                                <td>
+                                    <%= historial[i].idAudioLibro %>
+                                </td>
+                                <td>
+                                    <%= historial[i].fecha %>
+                                </td>
+                                <!-- <td>
+                                    <a href="/delete/<%=historial[i].idHistorial%>" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+                                    <a href="/edit/<%=historial[i].idHistorial%>" class="btn btn-info"><i class="fa-solid fa-pencil"></i></a>
+                                </td> -->
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+            <% } else{ %>
+                <div class="container cont animate__animated animate__flipInY">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1>No hay Historial</h1>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+<%- include('../partials/footer') %>

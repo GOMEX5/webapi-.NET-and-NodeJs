@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  db:
+    image: "mcr.microsoft.com/mssql/server:latest"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Freddy@500
+    ports:
+      - 1433:1433
+  dockersqlserver:
+    image: ${DOCKER_REGISTRY-}sql
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - db

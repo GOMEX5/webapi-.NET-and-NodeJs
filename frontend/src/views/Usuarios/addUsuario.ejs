@@ -1,0 +1,43 @@
+<%- include('../partials/nav') %>
+<%- include('../partials/head') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 offset-md-3">
+            <div class="card animate__animated animate__flipInY  cardCss2">
+                <div class="card-header bg-dark text-white text-center">
+                    <h2>Insertar Usuario</h2>
+                </div>
+                <div class="card-body">
+                    <form action="/insert_usuario" method="POST">
+                        <div class="form-group mt-3">
+                            <input type="text" name="nombre" required placeholder="Nombre" class="form-control">
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="text" name="apellido" required placeholder="Apellido" class="form-control">
+                        </div>
+                        <div class="form-group mt-3">
+                            <select name="tipo" class="form-select" aria-label="Default select example">
+                                <option value="User">User</option>
+                                <option value="Admin">Admin</option>
+                                </select>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="email" name="correo" required placeholder="@email" class="form-control">
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="password" name="pass" required placeholder="Password" class="form-control">
+                        </div>
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button type="submit" class="btn btn-primary mt-3">
+                                Ingresar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>

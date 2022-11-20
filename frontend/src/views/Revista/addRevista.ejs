@@ -1,0 +1,37 @@
+<%- include('../partials/nav') %>
+<%- include('../partials/head') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 offset-md-3">
+            <div class="card animate__animated animate__flipInY  cardCss2">
+                <div class="card-header bg-dark text-white text-center">
+                    <h1>Ingrese Revista</h1>
+                </div>
+                <div class="card-body">
+                    <form action="/insert_revista" method="POST">
+                        <div class="form-group mt-3">
+                            <input type="text" name="titulo" required placeholder="Titulo" class="form-control">
+                        </div>
+                                <div class="form-group mt-3">
+                                    <input type="text" name="autor" required placeholder="Autor" class="form-control">
+                                </div>
+                                <div class="form-group mt-3">
+                                    <input type="date" name="fechaPublicacion" class="form-control" required>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <input type="text" name="img" required placeholder="Recurso" class="form-control">
+                                </div>
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button type="submit" class="btn btn-primary mt-3">
+                                Ingresar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>

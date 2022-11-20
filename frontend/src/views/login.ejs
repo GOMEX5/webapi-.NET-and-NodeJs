@@ -1,0 +1,36 @@
+<%- include('partials/nav') %>
+<%- include('partials/head') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 offset-md-3">
+            <div class="card animate__animated animate__flipInY  cardCss2">
+                <div class="card-header bg-dark text-white text-center">
+                    <h2>Login</h2>
+                </div>
+                <div class="card-body">
+                    <form action="/logiar" method="POST">
+                        <div class="form-group mt-3">
+                            <input type="email" name="correo" required placeholder="@email" class="form-control">
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="password" name="pass" required placeholder="Password" class="form-control">
+                        </div>
+                        <div class="d-grid gap-2 col-6 mx-auto mb-2">
+                            <button type="submit" class="btn btn-primary mt-3">
+                                Ingresar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer bg-dark text-white text-center">
+                    <p>
+                        No tienes cuenta ingresa <a class="btn btn-light" href="/registro_usuario">Aqui</a>
+                    </p>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

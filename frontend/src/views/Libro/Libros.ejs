@@ -1,0 +1,86 @@
+<%- include('../partials/head') %>
+    <%- include('../partials/nav') %>
+    <% if(admin){%>
+        <% if(libros.length> 0){ %>
+            <a href="/add_libro" class="btn-plus"><i class="fa-solid fa-circle-plus"></i></a>
+
+            <div class="container table-responsive tbm animate__animated animate__bounce">
+                <table class="table table-light table-bordered table-hover">
+                    <thead>
+                        <tr class="table-dark">
+                            <th>N#</th>
+                            <th>Titulo</th>
+                            <th>Categoria</th>
+                            <th>Autor</th>
+                            <th>Editorial</th>
+                            <th>Recurso</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i=0; i < libros.length; i++){ %>
+                            <tr>
+                                <td>
+                                    <%= i+1 %>
+                                </td>
+                                <td>
+                                    <%= libros[i].titulo %>
+                                </td>
+                                <td>
+                                    <%= libros[i].categoria %>
+                                </td>
+                                <td>
+                                    <%= libros[i].autor %>
+                                </td>
+                                <td>
+                                    <%= libros[i].editorial %>
+                                </td>
+                                <td>
+                                    <img src="<%= libros[i].img %>" class="img-tabla">
+                                </td>
+                                <td>
+                                    <a href="/delete_libro/<%=libros[i].idLibro%>" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+                                    <a href="/edit_libro/<%=libros[i].idLibro%>" class="btn btn-info"><i class="fa-solid fa-pencil"></i></a>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+            <% } else{ %>
+                <div class="container cont animate__animated animate__flipInY">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1>No hay Libros</h1>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+    <%}else{%>
+        <div class="container">
+            <div class="row">
+                <% for(var i=0; i < libros.length; i++){ %>
+                    <div class="card col-12 col-md-3 col-sm-12 tarj animate__animated animate__backInDown">
+                        <div class="card-header title-Tarj">
+                            <h4><%= libros[i].titulo%></h4>
+                        </div>
+                      <div class="card-body">
+                        <center>
+                            <img src="<%= libros[i].img%>" class="img-tarj">
+                          </center>
+                      <hr>
+                      <p>
+                        <b>Categoria:</b> <%= libros[i].categoria%><br/>
+                        <b>Autor:</b> <%= libros[i].autor%><br/>
+                        <b>Editorial:</b> <%= libros[i].editorial%><br/>
+                        <a href="<%= libros[i].img%>" target="_blank" class="btn btn-info">
+                            <i class="fa-sharp fa-solid fa-eye"></i>
+                        </a>
+                        </p>
+                      </div>
+                    </div>
+                <%}%>
+            </div>
+        </div>
+    <%}%>
+<%- include('../partials/footer') %>

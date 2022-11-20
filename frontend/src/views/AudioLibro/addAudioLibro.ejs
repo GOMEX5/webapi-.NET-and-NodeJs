@@ -1,0 +1,46 @@
+<%- include('../partials/nav') %>
+<%- include('../partials/head') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 offset-md-3">
+            <div class="card animate__animated animate__flipInY  cardCss2">
+                <div class="card-header bg-dark text-white text-center">
+                    <h2>Ingrese Audio Libro</h2>
+                </div>
+                <div class="card-body">
+                    <form action="/insert_audio_libro" method="POST">
+                        <div class="form-group mt-3">
+                            <input type="text" name="titulo" required placeholder="Titulo" class="form-control">
+                        </div>
+                        <div class="form-group mt-3">
+                            <select name="tipo" class="form-select" aria-label="Default select example">
+                                <option value="Casete">Casete</option>
+                                <option value="Disco de vinilo">Disco de vinilo</option>
+                                <option value="CD">CD</option>
+                                <option value="MP3CD">MP3CD</option>
+                                <option value="Podcast">Podcast</option>
+                                <option value="Mp3">Mp3</option>
+                                </select>
+                                <div class="form-group mt-3">
+                                    <input type="text" name="autor" required placeholder="Autor" class="form-control">
+                                </div>
+                                <div class="form-group mt-3">
+                                    <input type="text" name="editorial" required placeholder="Editorial" class="form-control">
+                                </div>
+                                <div class="form-group mt-3">
+                                    <input type="text" name="img" required placeholder="Recurso" class="form-control">
+                                </div>
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button type="submit" class="btn btn-primary mt-3">
+                                Ingresar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>

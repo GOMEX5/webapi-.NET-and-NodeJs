@@ -1,0 +1,46 @@
+<%- include('../partials/nav') %>
+<%- include('../partials/head') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 offset-md-3">
+            <div class="card animate__animated animate__flipInY  cardCss2">
+                <div class="card-header bg-dark text-white text-center">
+                    <h1>Ingrese Libro</h1>
+                </div>
+                <div class="card-body">
+                    <form action="/update_libro/<%= libro.idLibro%>" method="POST">
+                        <div class="form-group mt-3">
+                            <input type="text" name="titulo" required placeholder="Titulo" value="<%= libro.titulo%>"  class="form-control">
+                        </div>
+                        <div class="form-group mt-3">
+                            <select name="categoria" class="form-select" aria-label="Default select example" value="<%= libro.categoria%>">
+                                <option value="Cuento">Cuento</option>
+                                <option value="Novela">Novela</option>
+                                <option value="Poesia">Poesia</option>
+                                <option value="Cientificos">Cientificos</option>
+                                <option value="Diccionario">Diccionario</option>
+                                <option value="Turismo">Turismo</option>
+                                </select>
+                                <div class="form-group mt-3">
+                                    <input type="text" name="autor" required placeholder="Autor" class="form-control" value="<%= libro.autor%>">
+                                </div>
+                                <div class="form-group mt-3">
+                                    <input type="text" name="editorial" required placeholder="Editorial" class="form-control" value="<%= libro.editorial%>">
+                                </div>
+                                <div class="form-group mt-3">
+                                    <input type="text" name="img" required placeholder="Recurso" class="form-control" value="<%= libro.img%>">
+                                </div>
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button type="submit" class="btn btn-primary mt-3">
+                                Ingresar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>
